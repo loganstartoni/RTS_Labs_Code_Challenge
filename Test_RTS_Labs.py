@@ -31,6 +31,15 @@ class AboveBelowTests(unittest.TestCase):
             {"above": 0, "below": 0}
         )
 
+    def test_for_failure(self):
+        self.assertNotEqual(
+            RTSLabsChallenge.aboveBelow(
+                [6, 6, 6, 6, 6, 6, 6, 6],
+                6
+            ),
+            {"above": 0, "below": 1}
+        )
+
 
 class AboveBelowEqualsTests(unittest.TestCase):
     def test_given_test(self):
@@ -60,6 +69,15 @@ class AboveBelowEqualsTests(unittest.TestCase):
             {"above": 0, "below": 0, "equal": 8}
         )
 
+    def test_for_failure(self):
+        self.assertNotEqual(
+            RTSLabsChallenge.aboveBelowEqual(
+                [6, 6, 6, 6, 6, 6, 6, 6],
+                6
+            ),
+            {"above": 0, "below": 1, "equal": 8}
+        )
+
 
 class StringRotationTests(unittest.TestCase):
     def test_given_test(self):
@@ -87,6 +105,12 @@ class StringRotationTests(unittest.TestCase):
         self.assertEqual(
             RTSLabsChallenge.stringRotation("", 2),
             ""
+        )
+
+    def test_for_failure(self):
+        self.assertNotEqual(
+            RTSLabsChallenge.stringRotation("", 2),
+            "MyString"
         )
 
 
